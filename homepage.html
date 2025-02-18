@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - IELTS Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="user-info">
+            <div class="avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <span id="user-email">user@example.com</span>
+        </div>
+        <button id="logout" class="logout-button">Logout</button>
+    </header>
+    <div class="grid-container">
+        <div class="word-of-the-day">
+            <h2>Word Of The Day</h2>
+            <h3>Taciturn</h3>
+            <p>Reserved or uncommunicative in speech; saying little.</p>
+        </div>
+        <div class="task-container">
+            <div class="task-item">
+                <i class="fas fa-book"></i>
+                <div>
+                    <h4>Grammar</h4>
+                    <p>Explore Grammar Tasks</p>
+                </div>
+            </div>
+            <div class="task-item">
+                <i class="fas fa-book"></i>
+                <div>
+                    <h4>Vocabulary</h4>
+                    <p>Explore Vocabulary Tasks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+        import { app } from './firebase-config.js';
+
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                document.getElementById('user-email').textContent = user.email;
+            } else {
+                window.location.replace('login.html');
+            }
+        });
+
+        document.getElementById('logout').addEventListener('click', function() {
+            if (confirm('Are you sure you want to logout?')) {
+                signOut(auth).then(() => {
+                    window.location.replace('login.html');
+                }).catch((error) => {
+                    alert('Error: ' + error.message);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
