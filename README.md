@@ -52,9 +52,8 @@ Simply open `index.html` in a web browser, or use Live Server in VS Code for tes
 - Add password reset functionality
 - Deploy the project using Firebase Hosting
 - Improve UI design with animations and themes
+- Backend integration
 
-## License
-This project is licensed under the MIT License.
 
 ---
 🚀 Happy Coding! Let me know if you need any improvements! 🎯
