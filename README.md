@@ -56,5 +56,5 @@ Simply open `index.html` in a web browser, or use Live Server in VS Code for tes
 
 
 ---
-🚀 Happy Coding! Let me know if you need any improvements! 🎯
+Happy Coding! Let me know if you need any improvements! 
 
