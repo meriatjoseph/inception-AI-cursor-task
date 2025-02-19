@@ -22,7 +22,7 @@ IELTS Practice is a simple web application that includes user authentication usi
 │── login.html        # Login page
 │── signup.html       # Signup page
 │── style.css         # Styling file
-│── app.js            # Firebase authentication logic
+│── app.js            # Functions/logic
 │── firebase-config.js # Firebase initialization
 │── README.md         # Project documentation
 ```
